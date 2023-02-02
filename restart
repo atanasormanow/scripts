@@ -1,0 +1,9 @@
+#!/bin/bash
+
+CHOICE=$(printf "No\nYes" | dmenu -i -dim 0.35 -fn "DejaVu Sans Mono-16" \
+  -h 30 -sb "#F0C550" -sf Black -p "Restart PC?")
+
+if [ "$CHOICE" == "Yes" ]; then
+  reboot
+fi
+
