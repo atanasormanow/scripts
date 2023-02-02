@@ -1,6 +1,13 @@
 #!/bin/bash
 
-CHOICE=$(ls ~/.screenlayout/ | dmenu -i -dim 0.35 -fn "DejaVu Sans Mono-16" \
-  -h 30 -sb "#F0C550" -sf Black -p "Choose screen layout?")
-~/.screenlayout/$CHOICE
+SCREENLAYOUTS=$(ls ~/.screenlayout/)
+CHOICE=$(echo -e "manual\n$SCREENLAYOUTS" \
+  | dmenu -i -dim 0.35 -fn "DejaVu Sans Mono-16" -h 30 -sb "#F0C550" -sf Black -p "Choose screen layout?")
+
+# NOTE: There shouldn't be a script named "manual" in ~/.screenlayout
+if [ "$CHOICE" == "manual" ]; then
+  arandr
+else
+  ~/.screenlayout/$CHOICE
+fi
 
