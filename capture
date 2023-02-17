@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# TODO use variables for the case match and list
+CHOICE=$(echo -e "screenshot\nselection\nmonitors\nrecord" \
+  | dmenu -i -dim 0.35 -fn "DejaVu Sans Mono-16"           \
+  -h 30 -sb "#F0C550" -sf Black -p "Restart PC?")
+
+case $CHOICE in
+  "screenshot")
+    # TODO: maybe you can pass a screen index?
+    flameshot screen
+    ;;
+  "selection")
+    flameshot gui
+    ;;
+  "monitors")
+    flameshot full
+    ;;
+  "record")
+    peek
+    ;;
+  *)
+    exit
+    ;;
+esac
+
