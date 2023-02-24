@@ -1,0 +1,2 @@
+- Abstract the choice and use some map for <choice, statement>
+- Abstract running "alacritty -e <prog>" in a floating window of some size
