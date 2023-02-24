@@ -8,13 +8,13 @@ CHOICE=$(echo -e "screenshot\nselection\nmonitors\nrecord" \
 case $CHOICE in
   "screenshot")
     # TODO: maybe you can pass a screen index?
-    flameshot screen
+    flameshot screen --clipboard
     ;;
   "selection")
     flameshot gui
     ;;
   "monitors")
-    flameshot full
+    flameshot full --clipboard
     ;;
   "record")
     peek
