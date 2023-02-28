@@ -1,6 +1,6 @@
 #!/bin/bash
 
-alacritty -e nmtui connect &
+alacritty &
 pid="$!"
 
 # Wait for the window to open and grab its window ID
@@ -15,10 +15,13 @@ wmctrl -ia "${winid}"
 
 i3-msg floating enable > /dev/null;
 
-#TODO: after resizing the ui is fucked up
 i3-msg resize set 40 ppt 80 ppt
 
 i3-msg move position center > /dev/null;
+
+#TODO: after closing nmtui the terminal stays open
+xdotool getactivewindow type "nmtui connect"
+xdotool getactivewindow key Return
 
 # Wait for the application to quit
 wait "${pid}";
