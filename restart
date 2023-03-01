@@ -1,7 +1,6 @@
 #!/bin/bash
 
-CHOICE=$(echo -e "No\nYes" | dmenu -i -dim 0.35 -fn "DejaVu Sans Mono-16" \
-  -h 30 -sb "#F0C550" -sf Black -p "Restart PC?")
+CHOICE=$(echo -e "No\nYes" | dmenu_fancy -p "Restart PC?")
 
 if [ "$CHOICE" == "Yes" ]; then
   reboot

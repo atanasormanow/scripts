@@ -1,2 +1,6 @@
 - Abstract the choice and use some map for <choice, statement>
 - Abstract running "alacritty -e <prog>" in a floating window of some size
+  (or use --class and for_window)
+- Close window after exiting nmtui
+- Using dmenu_fancy works because it is in PATH (as are all scripts in this
+  folder), but using ./dmenu_fancy does not work. Why??

@@ -1,9 +1,7 @@
 #!/bin/bash
 
 # TODO use variables for the case match and list
-CHOICE=$(echo -e "screenshot\nselection\nmonitors\nrecord" \
-  | dmenu -i -dim 0.35 -fn "DejaVu Sans Mono-16"           \
-  -h 30 -sb "#F0C550" -sf Black -p "Restart PC?")
+CHOICE=$(echo -e "screenshot\nselection\nmonitors\nrecord" | dmenu_fancy -p "Capture")
 
 case $CHOICE in
   "screenshot")
