@@ -1,0 +1,9 @@
+#!/bin/bash
+
+CHOICE=$(echo -e "Enable\nDisable" | dmenu_fancy -p "Listen to microphone?")
+
+if [ "$CHOICE" == "Enable" ]; then
+  pactl load-module module-loopback latency_msec=1
+else
+  pactl unload-module module-loopback
+fi
