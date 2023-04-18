@@ -1,8 +1,0 @@
-#!/bin/bash
-
-CHOICE=$(echo -e "No\nYes" | dmenu_fancy -p "Restart PC?")
-
-if [ "$CHOICE" == "Yes" ]; then
-  reboot
-fi
-
